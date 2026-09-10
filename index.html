@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VI Reunião de Coordenação do SSCM · Cidade de Maputo</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emblem_of_Mozambique.svg/1200px-Emblem_of_Mozambique.svg.png">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Roboto, sans-serif; background: #fff; color: #333; line-height: 1.6; }
+  a { text-decoration: none; }
+
+  /* ========== HEADER (igual ao ccs.misau) ========== */
+  .header { background: #b8912a; padding: 12px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; gap: 12px; }
+  .header-brand { display: flex; align-items: center; gap: 10px; color: #fff; font-weight: 600; font-size: 15px; }
+  .header-brand img { width: 32px; height: 32px; border-radius: 50%; background: #fff; padding: 2px; }
+  .nav { display: flex; gap: 6px; flex-wrap: wrap; }
+  .nav a { color: #fff; padding: 6px 14px; font-size: 13.5px; border-radius: 4px; font-weight: 500; transition: 0.2s; }
+  .nav a:hover, .nav a.active { background: rgba(255,255,255,0.15); }
+
+  /* ========== HERO (brasão + título + imagem) ========== */
+  .hero { background: linear-gradient(180deg,#fdfaf3 0%,#fff 100%); text-align: center; padding: 50px 20px 0; }
+  .hero .brasao { width: 90px; height: 90px; margin-bottom: 16px; }
+  .hero h1 { color: #b8912a; font-size: 34px; font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; }
+  .hero .dates { color: #b8912a; font-size: 17px; font-weight: 600; margin-bottom: 30px; }
+  .hero .hero-img { max-width: 900px; width: 100%; height: 380px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+  .hero .lema { color: #b8912a; font-size: 18px; font-style: italic; font-weight: 600; padding: 30px 20px 40px; }
+
+  /* ========== INFO BAR ========== */
+  .infobar { background: #d4a72c; color: #fff; padding: 16px 20px; display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; font-size: 14px; font-weight: 500; }
+  .infobar span { display: inline-flex; align-items: center; gap: 8px; }
+  .infobar i { font-size: 16px; }
+
+  /* ========== SOBRE O EVENTO ========== */
+  .section { padding: 60px 40px; max-width: 1200px; margin: 0 auto; }
+  .section h2 { text-align: center; color: #b8912a; font-size: 32px; font-weight: 800; margin-bottom: 40px; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .about-text { color: #555; font-size: 16px; line-height: 1.9; text-align: justify; }
+  .about-img { width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+  /* ========== OBJECTIVOS ========== */
+  .obj-section { background: #fdfaf3; padding: 60px 40px; }
+  .obj-general { background: #b8912a; color: #fff; padding: 24px 30px; border-radius: 8px; max-width: 1000px; margin: 0 auto 40px; }
+  .obj-general .label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; margin-bottom: 6px; }
+  .obj-general p { font-size: 15px; line-height: 1.7; }
+  .obj-specific { max-width: 1000px; margin: 0 auto; }
+  .obj-specific h4 { text-align: center; color: #b8912a; font-size: 15px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px; }
+  .obj-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .obj-card { background: #fff; border: 1px solid #ecd9a0; border-radius: 8px; padding: 24px; }
+  .obj-card .num { width: 28px; height: 28px; background: #f5e6b8; color: #b8912a; font-weight: 700; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 14px; }
+  .obj-card h5 { color: #333; font-size: 14px; margin-bottom: 10px; font-weight: 700; }
+  .obj-card p { color: #666; font-size: 13px; line-height: 1.6; }
+
+  /* ========== RESULTADOS ESPERADOS ========== */
+  .result-section { padding: 60px 40px; max-width: 1200px; margin: 0 auto; }
+  .result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .result-card { background: #fdfaf3; padding: 24px; border-left: 3px solid #d4a72c; border-radius: 4px; color: #444; font-size: 14px; line-height: 1.7; }
+
+  /* ========== METODOLOGIA ========== */
+  .method-section { background: #fdfaf3; padding: 60px 40px; }
+  .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
+  .method-card { background: #fff; padding: 24px; border-radius: 8px; border: 1px solid #ecd9a0; }
+  .method-card i { color: #b8912a; font-size: 20px; margin-right: 8px; }
+  .method-card h5 { color: #b8912a; font-size: 15px; font-weight: 700; margin-bottom: 10px; display: inline-block; }
+  .method-card p { color: #666; font-size: 14px; margin-top: 8px; }
+
+  /* ========== LOCAL ========== */
+  .local-section { text-align: center; padding: 60px 20px; }
+  .local-icon { width: 60px; height: 60px; background: #f5e6b8; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+  .local-icon i { color: #b8912a; font-size: 24px; }
+  .local-section h2 { color: #b8912a; font-size: 26px; font-weight: 800; margin-bottom: 12px; }
+  .local-section .cidade { color: #333; font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .local-section .prov { color: #777; font-size: 14px; margin-bottom: 24px; }
+  .btn-gold { display: inline-flex; align-items: center; gap: 8px; background: #d4a72c; color: #fff; padding: 12px 28px; border-radius: 30px; font-weight: 600; font-size: 14px; transition: 0.2s; }
+  .btn-gold:hover { background: #b8912a; }
+
+  /* ========== CTA FINAL ========== */
+  .cta { background: #b8912a; color: #fff; text-align: center; padding: 50px 20px; }
+  .cta h3 { font-size: 22px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 24px; }
+  .cta-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .cta-btns a { padding: 10px 28px; border: 2px solid #fff; border-radius: 30px; color: #fff; font-weight: 600; font-size: 13.5px; transition: 0.2s; }
+  .cta-btns a:hover { background: #fff; color: #b8912a; }
+
+  /* ========== FOOTER ========== */
+  .footer { background: #8a6a10; color: rgba(255,255,255,0.85); text-align: center; padding: 30px 20px; }
+  .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 16px; flex-wrap: wrap; }
+  .footer-links a { color: rgba(255,255,255,0.85); font-size: 13px; }
+  .footer-links a:hover { color: #fff; text-decoration: underline; }
+  .footer hr { border: none; border-top: 1px solid rgba(255,255,255,0.2); margin: 12px auto; max-width: 600px; }
+  .footer p { font-size: 12.5px; }
+
+  /* ========== RESPONSIVO ========== */
+  @media (max-width: 900px) {
+    .header { padding: 10px 16px; }
+    .hero h1 { font-size: 22px; }
+    .hero .hero-img { height: 220px; }
+    .infobar { gap: 20px; flex-direction: column; text-align: center; }
+    .about-grid { grid-template-columns: 1fr; }
+    .obj-cards, .result-grid, .method-grid { grid-template-columns: 1fr; }
+    .section, .obj-section, .result-section, .method-section { padding: 40px 20px; }
+    .section h2 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-brand">
+    <img src="/site-sscm/assets/images/logo.png" alt="Brasão">
+    <span>Serviço da Saúde da Cidade de Maputo</span>
+  </div>
+  <nav class="nav">
+    <a href="index.html" class="active">Início</a>
+    <a href="agenda.html">Agenda</a>
+    <a href="programa.html">Programa</a>
+    <a href="documentos.html">Documentos da reunião</a>
+    <a href="fotografias.html">Fotografias</a>
+    <a href="comentarios.html">Comentários</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="brasao" src="/site-sscm/assets/images/logos.png" alt="Brasão">
+  <h1>VI CONSELHO COORDENADOR DE SAÚDE - SSCM</h1>
+  <p class="dates">Cidade de Maputo — 01 - 02 de Outubro de 2026</p>
+  <img class="hero-img" src="/site-sscm/assets/images/menu.jpeg" alt="Reunião">
+  <p class="lema">Por um Serviço Nacional de Saúde de Qualidade e Humanizado para Todos</p>
+</section>
+
+<!-- INFO BAR -->
+<div class="infobar">
+  <span><i class="far fa-calendar"></i> 01 - 02 de Outubro de 2026</span>
+  <span><i class="fas fa-map-marker-alt"></i> Cidade de Maputo, Moçambique</span>
+  <span><i class="fas fa-user-md"></i> Sector Saúde</span>
+</div>
+
+<!-- SOBRE O EVENTO -->
+<section class="section">
+  <h2>Sobre o Evento</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>O Conselho Coordenador de Saúde é um órgão consultivo estratégico, convocado e presidido pelo Ministro da Saúde. A sua actuação visa assegurar a articulação, a planificação estratégica e a monitoria da implementação das políticas do sector, garantindo o alinhamento dos objectivos em todos os níveis de intervenção.</p>
+      <p style="margin-top:16px;">A VI Reunião de Coordenação do Serviço de Saúde da Cidade de Maputo (SSCM) reúne os principais actores do sector de saúde da capital do país para avaliar o desempenho, partilhar experiências e definir prioridades estratégicas para o próximo ciclo de planificação.</p>
+    </div>
+    <img class="about-img" src="/site-sscm/assets/images/me.jpg" alt="Edifício MISAU">
+  </div>
+</section>
+
+<!-- OBJECTIVOS -->
+<div class="obj-section">
+  <h2 style="text-align:center;color:#b8912a;font-size:32px;font-weight:800;margin-bottom:40px;">Objectivos da Reunião</h2>
+  <div class="obj-general">
+    <div class="label">Objectivo Geral</div>
+    <p>Avaliar o desempenho sectorial e estabelecer as directrizes estratégicas para o desenvolvimento da saúde, assegurando o alinhamento das políticas e compromissos institucionais com vista à promoção da eficiência e sustentabilidade do sector.</p>
+  </div>
+  <div class="obj-specific">
+    <h4>Objectivos específicos</h4>
+    <div class="obj-cards">
+      <div class="obj-card">
+        <div class="num">1</div>
+        <h5>Avaliar o desempenho e o cumprimento de metas sectoriais</h5>
+        <p>Avaliar o desempenho do sector (2025–2026) e o nível de implementação do POG 2025–2029, identificando resultados, desafios e medidas correctivas.</p>
+      </div>
+      <div class="obj-card">
+        <div class="num">2</div>
+        <h5>Planificar e orientar as prioridades estratégicas futuras</h5>
+        <p>Definir as prioridades e linhas estratégicas do sector para orientar a elaboração do PESOE 2027, garantindo o alinhamento com o PESS 2026–2035.</p>
+      </div>
+      <div class="obj-card">
+        <div class="num">3</div>
+        <h5>Fortalecer a eficiência institucional e deliberar sobre matérias estratégicas</h5>
+        <p>Harmonizar intervenções, responsabilidades e compromissos para reforçar a eficiência e sustentabilidade do sector.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTADOS ESPERADOS -->
+<section class="result-section">
+  <h2 style="text-align:center;color:#b8912a;font-size:32px;font-weight:800;margin-bottom:40px;">Resultados Esperados</h2>
+  <div class="result-grid">
+    <div class="result-card">Grau de cumprimento das recomendações anteriores e desempenho do sector (2025 – 2026) devidamente analisados, com os principais sucessos e estrangulamentos identificados.</div>
+    <div class="result-card">Linhas estratégicas e prioridades sectoriais claramente definidas para orientar o processo de elaboração do PESOE 2027.</div>
+    <div class="result-card">Intervenções, papéis e compromissos partilhados entre os diferentes actores harmonizados com vista a aumentar a eficiência e sustentabilidade do sector.</div>
+  </div>
+</section>
+
+<!-- METODOLOGIA -->
+<div class="method-section">
+  <h2 style="text-align:center;color:#b8912a;font-size:32px;font-weight:800;margin-bottom:40px;">Metodologia</h2>
+  <div class="method-grid">
+    <div class="method-card">
+      <i class="fas fa-users"></i><h5>Formato da reunião</h5>
+      <p>Presencial</p>
+    </div>
+    <div class="method-card">
+      <i class="fas fa-chalkboard-teacher"></i><h5>Dinâmica</h5>
+      <p>Discussões em plenária e painéis de discussão, com apresentações em PPT</p>
+    </div>
+    <div class="method-card">
+      <i class="fas fa-list"></i><h5>Temas</h5>
+      <p>• Prestação de contas, discussão e informativos</p>
+    </div>
+  </div>
+</div>
+
+<!-- LOCAL -->
+<section class="local-section">
+  <div class="local-icon"><i class="fas fa-map-marker-alt"></i></div>
+  <h2>Local do evento</h2>
+  <p class="cidade">Cidade de Maputo</p>
+  <p class="prov">Moçambique</p>
+  <a href="https://maps.google.com/?q=Maputo" target="_blank" class="btn-gold">
+    <i class="fas fa-map-marker-alt"></i> Ver no Google Maps
+  </a>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <h3>O NOSSO MAIOR VALOR É A VIDA</h3>
+  <div class="cta-btns">
+    <a href="agenda.html">Consultar Agenda</a>
+    <a href="programa.html">Ver Programa</a>
+    <a href="contacto.html">Contactar Organização</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-links">
+    
+   
+  </div>
+  <hr>
+  <p>© 2026 Serviço da Saúde da Cidade de Maputo. Todos os direitos reservados.</p>
+  <P>Desenvolvido por Marcos Lopes</P>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comentários · VI Reunião SSCM</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',Roboto,sans-serif; background:#fff; color:#333; }
+  a { text-decoration:none; }
+
+  .header { background:#b8912a; padding:12px 40px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:1000; flex-wrap:wrap; gap:12px; }
+  .header-brand { display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:15px; }
+  .header-brand img { width:32px; height:32px; border-radius:50%; background:#fff; padding:2px; }
+  .nav { display:flex; gap:6px; flex-wrap:wrap; }
+  .nav a { color:#fff; padding:6px 14px; font-size:13.5px; border-radius:4px; font-weight:500; }
+  .nav a:hover, .nav a.active { background:rgba(255,255,255,0.15); }
+
+  .banner { background:linear-gradient(135deg,#b8912a 0%,#d4a72c 100%); color:#fff; text-align:center; padding:60px 20px; }
+  .banner h1 { font-size:38px; font-weight:800; margin-bottom:6px; }
+  .banner p { font-size:15px; opacity:0.95; }
+  .banner .badge-gold { display:inline-block; background:rgba(255,255,255,0.2); padding:6px 20px; border-radius:30px; font-size:13px; font-weight:600; margin-top:12px; }
+
+  .container { max-width:900px; margin:0 auto; padding:50px 20px; }
+  .day-tabs { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:30px; }
+  .day-tabs button { padding:16px; border-radius:10px; border:1px solid #ecd9a0; background:#fff; font-family:inherit; cursor:pointer; font-weight:600; transition:0.2s; color:#333; font-size:14px; }
+  .day-tabs button.active { background:#d4a72c; color:#fff; border-color:#d4a72c; }
+
+  .crit-item { background:#fdfaf3; border:1px solid #ecd9a0; border-radius:10px; padding:18px 22px; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+  .crit-item .crit-name { color:#333; font-weight:600; font-size:15px; }
+  .crit-item .stars { color:#d4a72c; font-size:20px; letter-spacing:3px; }
+  .crit-item .nota { color:#8a6a10; font-weight:700; font-size:15px; }
+
+  .footer { background:#8a6a10; color:rgba(255,255,255,0.85); text-align:center; padding:30px 20px; margin-top:40px; }
+  .footer-links { display:flex; justify-content:center; gap:30px; margin-bottom:16px; flex-wrap:wrap; }
+  .footer-links a { color:rgba(255,255,255,0.85); font-size:13px; }
+  .footer hr { border:none; border-top:1px solid rgba(255,255,255,0.2); margin:12px auto; max-width:600px; }
+  .footer p { font-size:12.5px; }
+
+  @media(max-width:900px){
+    .header{padding:10px 16px;}
+    .banner h1{font-size:26px;}
+    .container{padding:30px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-brand">
+   <img src="/site-sscm/assets/images/logo.png" alt="Brasão">
+  </div>
+  <nav class="nav">
+    <a href="index.html">Início</a>
+    <a href="agenda.html">Agenda</a>
+    <a href="programa.html">Programa</a>
+    <a href="documentos.html">Documentos da reunião</a>
+    <a href="fotografias.html">Fotografias</a>
+    <a href="comentarios.html" class="active">Comentários</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<div class="banner">
+  <h1>Avaliação Diária</h1>
+  <p>VI Conselho Coordenador de Saúde - SSCM</p>
+  <span class="badge-gold"><i class="fas fa-star"></i> Escala 0–5 por critério · 1 avaliação por dia</span>
+</div>
+
+<div class="container">
+  <div class="day-tabs">
+    <button class="active" data-day="1">Dia 1 — 01 de Outubro</button>
+    <button data-day="2">Dia 2 — 02 de Outubro</button>
+  </div>
+  <div id="critList"></div>
+</div>
+
+<footer class="footer">
+  <div class="footer-links">
+   
+    
+  </div>
+  <hr>
+  <p>© 2026 Serviço da Saúde da Cidade de Maputo. Todos os direitos reservados.</p>
+   <P>Desenvolvido por Marcos Lopes</P>
+</footer>
+
+<script>
+const avaliacoes = {
+  1: [
+    { nome:'Organização', nota:4 },
+    { nome:'Conteúdo', nota:5 },
+    { nome:'Participação', nota:4 },
+    { nome:'Infraestrutura', nota:3 },
+    { nome:'Cumprimento do horário', nota:4 },
+  ],
+  2: [
+    { nome:'Organização', nota:5 },
+    { nome:'Conteúdo', nota:4 },
+    { nome:'Participação', nota:5 },
+    { nome:'Infraestrutura', nota:4 },
+    { nome:'Cumprimento do horário', nota:5 },
+  ]
+};
+
+function render(day) {
+  const list = document.getElementById('critList');
+  list.innerHTML = avaliacoes[day].map(c => {
+    const stars = '★'.repeat(c.nota) + '☆'.repeat(5 - c.nota);
+    return `
+      <div class="crit-item">
+        <span class="crit-name">${c.nome}</span>
+        <span class="stars">${stars}</span>
+        <span class="nota">${c.nota}/5</span>
+      </div>
+    `;
+  }).join('');
+}
+
+document.querySelectorAll('.day-tabs button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.day-tabs button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    render(parseInt(btn.dataset.day));
+  });
+});
+
+render(1);
+</script>
+
+</body>
+</html>

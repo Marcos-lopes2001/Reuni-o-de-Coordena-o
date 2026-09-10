@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agenda · VI Reunião SSCM</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',Roboto,sans-serif; background:#fff; color:#333; }
+  a { text-decoration:none; }
+
+  .header { background:#b8912a; padding:12px 40px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:1000; flex-wrap:wrap; gap:12px; }
+  .header-brand { display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:15px; }
+  .header-brand img { width:32px; height:32px; border-radius:50%; background:#fff; padding:2px; }
+  .nav { display:flex; gap:6px; flex-wrap:wrap; }
+  .nav a { color:#fff; padding:6px 14px; font-size:13.5px; border-radius:4px; font-weight:500; }
+  .nav a:hover, .nav a.active { background:rgba(255,255,255,0.15); }
+
+  .container { max-width:1100px; margin:0 auto; padding:50px 20px; }
+  .page-title { color:#b8912a; font-size:36px; font-weight:800; margin-bottom:8px; }
+  .page-sub { color:#666; font-size:15px; margin-bottom:24px; }
+  .badges { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:32px; }
+  .badge { background:#fdfaf3; border:1px solid #ecd9a0; color:#8a6a10; padding:6px 16px; border-radius:30px; font-size:13px; font-weight:500; }
+  .badge i { margin-right:6px; }
+
+  .days { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-bottom:32px; }
+  .day-card { background:#fdfaf3; border:1px solid #ecd9a0; border-radius:10px; padding:20px; text-align:center; cursor:pointer; transition:0.2s; }
+  .day-card .lbl { font-size:11px; color:#8a6a10; letter-spacing:1.5px; text-transform:uppercase; font-weight:700; }
+  .day-card .num { font-size:36px; font-weight:800; color:#333; margin:4px 0; }
+  .day-card .dt { font-size:13px; color:#777; }
+  .day-card.active { background:#d4a72c; border-color:#d4a72c; }
+  .day-card.active .lbl, .day-card.active .num, .day-card.active .dt { color:#fff; }
+
+  .day-banner { background:#d4a72c; color:#fff; padding:22px 28px; border-radius:10px; margin-bottom:24px; }
+  .day-banner .date { font-size:13px; opacity:0.9; margin-bottom:6px; }
+  .day-banner h3 { font-size:20px; font-weight:700; margin-bottom:14px; }
+  .day-banner a { display:inline-flex; align-items:center; gap:8px; background:#fff; color:#8a6a10; padding:8px 18px; border-radius:30px; font-size:13px; font-weight:600; }
+
+  .temas-box { background:#fff; border:1px solid #ecd9a0; border-radius:12px; padding:24px; margin-bottom:24px; }
+  .temas-box h4 { color:#333; font-size:16px; margin-bottom:20px; display:flex; align-items:center; gap:10px; }
+  .temas-box h4::before { content:''; width:4px; height:22px; background:#d4a72c; border-radius:2px; }
+  .tema-item { background:#fdfaf3; border:1px solid #ecd9a0; border-radius:10px; padding:16px 20px; margin-bottom:10px; display:flex; gap:16px; align-items:flex-start; }
+  .tema-item .tnum { min-width:32px; height:32px; background:#f5e6b8; color:#8a6a10; border-radius:6px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; }
+  .tema-item .tinfo h5 { color:#333; font-size:14px; margin-bottom:4px; font-weight:600; }
+  .tema-item .tinfo p { color:#b8912a; font-size:13px; font-weight:500; }
+
+  .total { background:#fdfaf3; color:#8a6a10; padding:12px 20px; border-radius:8px; font-size:14px; font-weight:600; display:inline-block; margin-bottom:30px; }
+
+  .lema-box { background:#d4a72c; color:#fff; text-align:center; padding:30px; border-radius:10px; }
+  .lema-box h4 { font-size:18px; font-weight:800; letter-spacing:1px; margin-bottom:6px; }
+  .lema-box p { font-size:14px; font-style:italic; opacity:0.95; }
+
+  .footer { background:#8a6a10; color:rgba(255,255,255,0.85); text-align:center; padding:30px 20px; margin-top:40px; }
+  .footer-links { display:flex; justify-content:center; gap:30px; margin-bottom:16px; flex-wrap:wrap; }
+  .footer-links a { color:rgba(255,255,255,0.85); font-size:13px; }
+  .footer hr { border:none; border-top:1px solid rgba(255,255,255,0.2); margin:12px auto; max-width:600px; }
+  .footer p { font-size:12.5px; }
+
+  @media(max-width:900px){
+    .header{padding:10px 16px;}
+    .days{grid-template-columns:repeat(2,1fr);}
+    .page-title{font-size:26px;}
+    .container{padding:30px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-brand">
+   <img src="/site-sscm/assets/images/logo.png" alt="Brasão">
+    <span>Serviço da Saúde da Cidade de Maputo</span>
+  </div>
+  <nav class="nav">
+    <a href="index.html">Início</a>
+    <a href="agenda.html" class="active">Agenda</a>
+    <a href="programa.html">Programa</a>
+    <a href="documentos.html">Documentos da reunião</a>
+    <a href="fotografias.html">Fotografias</a>
+    <a href="comentarios.html">Comentários</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h1 class="page-title">Agenda do Evento</h1>
+  <p class="page-sub">VI Reunião de Coordenação do SSCM</p>
+
+  <div class="badges">
+    <span class="badge"><i class="far fa-calendar"></i> 01 - 02 de Outubro de 2026</span>
+    <span class="badge"><i class="fas fa-map-marker-alt"></i> Cidade de Maputo, Moçambique</span>
+  </div>
+
+  <div class="days">
+    <div class="day-card active" data-day="1">
+      <div class="lbl">Dia</div>
+      <div class="num">1</div>
+      <div class="dt">01 Out</div>
+    </div>
+    <div class="day-card" data-day="2">
+      <div class="lbl">Dia</div>
+      <div class="num">2</div>
+      <div class="dt">02 Out</div>
+    </div>
+  </div>
+
+  <div class="day-banner">
+    <div class="date" id="bannerDate"> 01 de Outubro de 2026</div>
+    <h3 id="bannerTitle">Sessões do VI Conselho Coordenador de Saúde - SSCM</h3>
+    <a href="#" id="btnCalendar"><i class="far fa-calendar-plus"></i> Adicionar ao Google Calendar</a>
+  </div>
+
+  <div class="temas-box">
+    <h4>Temas do Dia</h4>
+    <div id="temasList"></div>
+  </div>
+
+  <div class="total" id="totalTemas">Total de 23 temas programados</div>
+
+  <div class="lema-box">
+    <h4>Lema do Evento</h4>
+    <p>Por um Serviço Nacional de Saúde de Qualidade e Humanizado para Todos</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-links">
+   
+    
+  </div>
+  <hr>
+  <p>© 2026 Serviço da Saúde da Cidade de Maputo. Todos os direitos reservados.</p>
+   <P>Desenvolvido por Marcos Lopes</P>
+</footer>
+
+<script>
+const temas = {
+  1: [
+    { n:1, t:'Chegada dos Participantes e do Administrador do Distrito', r:'Protocolo' },
+    { n:2, t:'Chegada de Sua Excelência Vicente Joaquim Imede - Secretário de Estado', r:'Comité de Recepção' },
+    { n:3, t:'Visita a Feira de Exposição de Oferta de Serviços', r:'RAM' },
+    { n:4, t:'Hino Nacional, Boas-Vindas e Objectivos do Encontro', r:'Exma. Dra. Paloma Maripiha' },
+    { n:5, t:'Distinção dos Melhores Funcionários e Discurso de Abertura', r:'Sua Excelência Secretário de Estado' },
+    { n:6, t:'Grau de Cumprimento das Recomendações do V Reunião SSCM', r:'Dr. Hortencio Faria' },
+    { n:7, t:'Análise do Desempenho do Sector', r:'Chefe do Dept. Estudos, Planificação e Comunicação' },
+    { n:8, t:'Painel I: Desafios e Estratégias na Saúde da Mulher e Criança', r:'Distrito KaMubukwana' },
+    { n:9, t:'Painel I: Prevenção e Controle de Doenças', r:'Distrito KaMavota' },
+    { n:10, t:'Painel I: Resposta a Emergências', r:'Resp. Provincial Doenças Não Transmissíveis' },
+    { n:11, t:'Painel II: Fluxo de Atendimento e Pressão Hospitalar', r:'Área de Mavalane' },
+    { n:12, t:'Painel II: Cuidados Obstétricos e Neonatais', r:'Área de José Macamo' },
+    { n:13, t:'Desafios na Gestão de Medicamentos e Material Cirúrgico', r:'Chefe Rep. Logística e Farmácia' },
+    { n:14, t:'Balanço Anual das Actividades Inspectivas', r:'Chefe Unidade Controlo Interno' },
+    { n:15, t:'Balanço dos Processos Disciplinares', r:'Chefe Repartição Assuntos Jurídicos' },
+    { n:16, t:'Considerações Finais do 1º Dia', r:'Exma. Sra. Directora do SSCM' },
+  ],
+  2: [
+    { n:1, t:'Leitura e Aprovação da Síntese do 1º Dia', r:'Secretariado' },
+    { n:2, t:'Desempenho Orçamental e Financeiro', r:'Chefe Dept. Administração e Finanças' },
+    { n:3, t:'Avaliação de Pacientes Retestados no CS Alto Maé', r:'CCS' },
+    { n:4, t:'Resultados do Projecto Mais Escolhas', r:'Pathfinder' },
+    { n:5, t:'Humanização dos Cuidados de Saúde', r:'—' },
+    { n:6, t:'Mesa Redonda', r:'—' },
+    { n:7, t:'Painel V: Implementação da Plataforma de Telemedicina - DREAM', r:'DREAM' },
+    { n:8, t:'Painel V: Introdução de Registo Médico Electrónico', r:'DPC' },
+    { n:9, t:'Painel V: Desafios no uso do SIS-RME', r:'Moderador: Dr. Baltazar Candrinho' },
+    { n:10, t:'Considerações Finais e Encerramento', r:'Exma. Sra. Directora do SSCM' },
+  ]
+};
+
+function render(day) {
+  const list = document.getElementById('temasList');
+  const arr = temas[day];
+  list.innerHTML = arr.map(t => `
+    <div class="tema-item">
+      <div class="tnum">${t.n}</div>
+      <div class="tinfo">
+        <h5>${t.t}</h5>
+        <p>${t.r}</p>
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('totalTemas').textContent = `Total de ${arr.length} temas programados`;
+  document.getElementById('bannerDate').textContent = day === 1 ? ' 01 de Outubro de 2026' : ' 02 de Outubro de 2026';
+}
+
+document.querySelectorAll('.day-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.day-card').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+    render(parseInt(card.dataset.day));
+  });
+});
+
+render(1);
+</script>
+
+</body>
+</html>

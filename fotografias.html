@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fotografias · VI Reunião SSCM</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',Roboto,sans-serif; background:#fff; color:#333; }
+  a { text-decoration:none; }
+
+  .header { background:#b8912a; padding:12px 40px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:1000; flex-wrap:wrap; gap:12px; }
+  .header-brand { display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:15px; }
+  .header-brand img { width:32px; height:32px; border-radius:50%; background:#fff; padding:2px; }
+  .nav { display:flex; gap:6px; flex-wrap:wrap; }
+  .nav a { color:#fff; padding:6px 14px; font-size:13.5px; border-radius:4px; font-weight:500; }
+  .nav a:hover, .nav a.active { background:rgba(255,255,255,0.15); }
+
+  .banner { background:#d4a72c; color:#fff; text-align:center; padding:60px 20px; }
+  .banner h1 { font-size:38px; font-weight:800; margin-bottom:6px; }
+  .banner p { font-size:15px; opacity:0.95; }
+
+  .container { max-width:1200px; margin:0 auto; padding:50px 20px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; }
+  .foto { background:#fdfaf3; border:1px solid #ecd9a0; border-radius:12px; overflow:hidden; transition:0.25s; }
+  .foto:hover { transform:translateY(-4px); box-shadow:0 10px 30px rgba(184,145,42,0.12); border-color:#b8912a; }
+  .foto .img { height:200px; background:linear-gradient(135deg,#f5e6b8 0%,#ecd9a0 100%); display:flex; align-items:center; justify-content:center; }
+  .foto .img i { font-size:60px; color:#b8912a; opacity:0.6; }
+  .foto .info { padding:16px 18px; }
+  .foto .info h4 { color:#333; font-size:14px; font-weight:700; margin-bottom:4px; }
+  .foto .info p { color:#8a6a10; font-size:12.5px; }
+
+  .footer { background:#8a6a10; color:rgba(255,255,255,0.85); text-align:center; padding:30px 20px; margin-top:40px; }
+  .footer-links { display:flex; justify-content:center; gap:30px; margin-bottom:16px; flex-wrap:wrap; }
+  .footer-links a { color:rgba(255,255,255,0.85); font-size:13px; }
+  .footer hr { border:none; border-top:1px solid rgba(255,255,255,0.2); margin:12px auto; max-width:600px; }
+  .footer p { font-size:12.5px; }
+
+  @media(max-width:900px){
+    .header{padding:10px 16px;}
+    .banner h1{font-size:26px;}
+    .container{padding:30px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-brand">
+    <img src="/site-sscm/assets/images/logo.png" alt="Brasão">
+    <span>Serviço da Saúde da Cidade de Maputo</span>
+  </div>
+  <nav class="nav">
+    <a href="index.html">Início</a>
+    <a href="agenda.html">Agenda</a>
+    <a href="programa.html">Programa</a>
+    <a href="documentos.html">Documentos da reunião</a>
+    <a href="fotografias.html" class="active">Fotografias</a>
+    <a href="comentarios.html">Comentários</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<div class="banner">
+  <h1>Fotografias Oficiais</h1>
+  <p>Registo fotográfico oficial da VI Reunião de Coordenação do SSCM</p>
+</div>
+
+<div class="container">
+  <div class="grid" id="fotosGrid"></div>
+</div>
+
+<footer class="footer">
+  <div class="footer-links">
+  
+  </div>
+  <hr>
+  <p>© 2026 Serviço da Saúde da Cidade de Maputo. Todos os direitos reservados.</p>
+   <P>Desenvolvido por Marcos Lopes</P>
+</footer>
+
+<script>
+const fotos = [
+  { t:'Entrada de Sua Excia. Secretário de Estado na sala', d:'Entrada de Sua Excia. Secretário de Estado' },
+  { t:'Presidium na Sessão de abertura da VI Reunião SSCM', d:'Presidium na Sessão de abertura' },
+  { t:'Abertura da VI Reunião SSCM por Sua Excia. Secretário de Estado', d:'Abertura da VI Reunião SSCM' },
+  { t:'Participantes da VI Reunião SSCM 2026', d:'Participantes da VI Reunião SSCM' },
+  { t:'Participantes da VI Reunião SSCM 2026', d:'Participantes da VI Reunião SSCM' },
+  { t:'Participantes da VI Reunião SSCM 2026', d:'Participantes da VI Reunião SSCM' },
+  { t:'Participantes da VI Reunião SSCM 2026', d:'Participantes da VI Reunião SSCM' },
+  { t:'Momento de felicitação dos aniversariantes', d:'Momento de felicitação' },
+  { t:'Participação dos Parceiros do MISAU na VI Reunião SSCM', d:'Participação dos Parceiros' },
+];
+
+document.getElementById('fotosGrid').innerHTML = fotos.map(f => `
+  <div class="foto">
+    <div class="img"><i class="fas fa-image"></i></div>
+    <div class="info">
+      <h4>${f.t}</h4>
+      <p>${f.d}</p>
+    </div>
+  </div>
+`).join('');
+</script>
+
+</body>
+</html>

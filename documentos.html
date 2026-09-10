@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentos · VI Reunião SSCM</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',Roboto,sans-serif; background:#fff; color:#333; }
+  a { text-decoration:none; }
+
+  .header { background:#b8912a; padding:12px 40px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:1000; flex-wrap:wrap; gap:12px; }
+  .header-brand { display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:15px; }
+  .header-brand img { width:32px; height:32px; border-radius:50%; background:#fff; padding:2px; }
+  .nav { display:flex; gap:6px; flex-wrap:wrap; }
+  .nav a { color:#fff; padding:6px 14px; font-size:13.5px; border-radius:4px; font-weight:500; }
+  .nav a:hover, .nav a.active { background:rgba(255,255,255,0.15); }
+
+  .banner { background:#d4a72c; color:#fff; text-align:center; padding:60px 20px; }
+  .banner h1 { font-size:38px; font-weight:800; margin-bottom:6px; }
+  .banner p { font-size:15px; opacity:0.95; }
+
+  .container { max-width:1200px; margin:0 auto; padding:50px 20px; }
+
+  .filters { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:32px; }
+  .filters button { padding:8px 24px; border-radius:30px; border:1px solid #ecd9a0; background:#fff; color:#8a6a10; cursor:pointer; font-weight:600; font-size:13.5px; transition:0.2s; font-family:inherit; }
+  .filters button:hover { background:#fdfaf3; }
+  .filters button.active { background:#b8912a; color:#fff; border-color:#b8912a; }
+
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:20px; }
+  .doc-card { background:#fdfaf3; border:1px solid #ecd9a0; border-radius:12px; padding:24px; transition:0.25s; }
+  .doc-card:hover { transform:translateY(-4px); box-shadow:0 10px 30px rgba(184,145,42,0.12); border-color:#b8912a; }
+  .doc-card .icon { width:48px; height:48px; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+  .doc-card .icon.pdf { background:#fee2e2; }
+  .doc-card .icon.pdf i { color:#dc2626; font-size:22px; }
+  .doc-card .icon.doc { background:#dbeafe; }
+  .doc-card .icon.doc i { color:#2563eb; font-size:22px; }
+  .doc-card h4 { color:#333; font-size:15px; font-weight:700; margin-bottom:6px; }
+  .doc-card p { color:#777; font-size:13px; margin-bottom:14px; line-height:1.5; }
+  .doc-card .meta { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .doc-card .tag-day { background:#f5e6b8; color:#8a6a10; padding:3px 12px; border-radius:20px; font-size:11.5px; font-weight:700; }
+  .doc-card .tag-type { padding:3px 12px; border-radius:20px; font-size:11.5px; font-weight:700; color:#fff; }
+  .doc-card .tag-type.pdf { background:#dc2626; }
+  .doc-card .tag-type.doc { background:#2563eb; }
+  .doc-card .btn-dl { display:inline-flex; align-items:center; gap:6px; margin-top:14px; color:#b8912a; font-size:13px; font-weight:600; }
+  .doc-card .btn-dl:hover { text-decoration:underline; }
+
+  .footer { background:#8a6a10; color:rgba(255,255,255,0.85); text-align:center; padding:30px 20px; margin-top:40px; }
+  .footer-links { display:flex; justify-content:center; gap:30px; margin-bottom:16px; flex-wrap:wrap; }
+  .footer-links a { color:rgba(255,255,255,0.85); font-size:13px; }
+  .footer hr { border:none; border-top:1px solid rgba(255,255,255,0.2); margin:12px auto; max-width:600px; }
+  .footer p { font-size:12.5px; }
+
+  @media(max-width:900px){
+    .header{padding:10px 16px;}
+    .banner h1{font-size:26px;}
+    .container{padding:30px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-brand">
+    <img src="/site-sscm/assets/images/logo.png" alt="Brasão">
+    <span>Serviço da Saúde da Cidade de Maputo</span>
+  </div>
+  <nav class="nav">
+    <a href="index.html">Início</a>
+    <a href="agenda.html">Agenda</a>
+    <a href="programa.html">Programa</a>
+    <a href="documentos.html" class="active">Documentos da reunião</a>
+    <a href="fotografias.html">Fotografias</a>
+    <a href="comentarios.html">Comentários</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<div class="banner">
+  <h1>Documentos da Reunião</h1>
+  <p>Apresentações e materiais organizados por dia</p>
+</div>
+
+<div class="container">
+  <div class="filters">
+    <button class="active" data-filter="all">Todos</button>
+    <button data-filter="dia1">Dia 1</button>
+    <button data-filter="dia2">Dia 2</button>
+  </div>
+
+  <div class="grid" id="docsGrid"></div>
+</div>
+
+<footer class="footer">
+  <div class="footer-links">
+    
+  </div>
+  <hr>
+  <p>© 2026 Serviço da Saúde da Cidade de Maputo. Todos os direitos reservados.</p>
+   <P>Desenvolvido por Marcos Lopes</P>
+</footer>
+
+<script>
+const docs = [
+  { t:'Grau de Cumprimento do V Reunião SSCM', d:'Apresentação do Dr. Hortencio Faria', tipo:'pdf', dia:'Dia 1', f:'dia1' },
+  { t:'Análise do Desempenho do Sector', d:'Dept. Estudos, Planificação e Comunicação', tipo:'pdf', dia:'Dia 1', f:'dia1' },
+  { t:'Painel I - Saúde da Mulher e Criança', d:'Distrito KaMubukwana', tipo:'pdf', dia:'Dia 1', f:'dia1' },
+  { t:'Painel I - Prevenção e Controle de Doenças', d:'Distrito KaMavota', tipo:'pdf', dia:'Dia 1', f:'dia1' },
+  { t:'Painel I - Resposta a Emergências', d:'Resp. Provincial Doenças Não Transmissíveis', tipo:'pdf', dia:'Dia 1', f:'dia1' },
+  { t:'Painel II - Fluxo de Atendimento', d:'Área de Mavalane', tipo:'pdf', dia:'Dia 1', f:'dia1' },
+  { t:'Painel II - Cuidados Obstétricos e Neonatais', d:'Área de José Macamo', tipo:'pdf', dia:'Dia 1', f:'dia1' },
+  { t:'Gestão de Medicamentos e Material Cirúrgico', d:'Repartição de Logística e Farmácia', tipo:'doc', dia:'Dia 1', f:'dia1' },
+  { t:'Balanço das Actividades Inspectivas', d:'Unidade de Controlo Interno', tipo:'doc', dia:'Dia 1', f:'dia1' },
+  { t:'Desempenho Orçamental e Financeiro', d:'Dept. Administração e Finanças', tipo:'doc', dia:'Dia 2', f:'dia2' },
+  { t:'Projecto Mais Escolhas', d:'Resultados do projecto - Pathfinder', tipo:'pdf', dia:'Dia 2', f:'dia2' },
+  { t:'Humanização dos Cuidados de Saúde', d:'Apresentação temática', tipo:'pdf', dia:'Dia 2', f:'dia2' },
+  { t:'Plataforma de Telemedicina - DREAM', d:'Implementação em Moçambique', tipo:'pdf', dia:'Dia 2', f:'dia2' },
+  { t:'Registo Médico Electrónico', d:'Introdução do RME', tipo:'pdf', dia:'Dia 2', f:'dia2' },
+  { t:'Desafios no uso do SIS-RME', d:'Moderador: Dr. Baltazar Candrinho', tipo:'pdf', dia:'Dia 2', f:'dia2' },
+];
+
+function render(filter) {
+  const grid = document.getElementById('docsGrid');
+  const filtered = filter === 'all' ? docs : docs.filter(d => d.f === filter);
+  if (!filtered.length) {
+    grid.innerHTML = '<p style="text-align:center;color:#999;grid-column:1/-1;">Nenhum documento encontrado.</p>';
+    return;
+  }
+  grid.innerHTML = filtered.map(d => `
+    <div class="doc-card">
+      <div class="icon ${d.tipo}">
+        <i class="fas fa-file-${d.tipo === 'pdf' ? 'pdf' : 'word'}"></i>
+      </div>
+      <h4>${d.t}</h4>
+      <p>${d.d}</p>
+      <div class="meta">
+        <span class="tag-day">${d.dia}</span>
+        <span class="tag-type ${d.tipo}">${d.tipo.toUpperCase()}</span>
+      </div>
+      <a href="#" class="btn-dl"><i class="fas fa-download"></i> Descarregar</a>
+    </div>
+  `).join('');
+}
+
+document.querySelectorAll('.filters button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    render(btn.dataset.filter);
+  });
+});
+
+render('all');
+</script>
+
+</body>
+</html>

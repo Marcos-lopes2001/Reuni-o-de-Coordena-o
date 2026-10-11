@@ -8,11 +8,48 @@
 <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emblem_of_Mozambique.svg/1200px-Emblem_of_Mozambique.svg.png">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Roboto, sans-serif; background: #fff; color: #333; line-height: 1.6; }
+  body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+    position: relative;
+  }
   a { text-decoration: none; }
 
+  /* ========== BACKGROUND WATERMARK ========== */
+  .bg-watermark {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image: url('assets/WhatsApp Image 2026-10-10 at 19.05.02 (1).jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.07;
+  }
+
+  /* Todo o conteúdo fica acima do background */
+  .header, .hero, .infobar, .section, .obj-section, .result-section, .method-section, .local-section, .cta, .footer {
+    position: relative;
+    z-index: 1;
+  }
+
   /* ========== HEADER ========== */
-  .header { background: #b8912a; padding: 12px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; gap: 12px; }
+  .header {
+    background: #b8912a;
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
   .header-brand { display: flex; align-items: center; gap: 10px; color: #fff; font-weight: 600; font-size: 15px; }
   .header-brand img { width: 32px; height: 32px; border-radius: 50%; background: #fff; padding: 2px; }
   .nav { display: flex; gap: 6px; flex-wrap: wrap; }
@@ -20,7 +57,7 @@
   .nav a:hover, .nav a.active { background: rgba(255,255,255,0.15); }
 
   /* ========== HERO ========== */
-  .hero { background: linear-gradient(180deg,#fdfaf3 0%,#fff 100%); text-align: center; padding: 50px 20px 0; }
+  .hero { background: linear-gradient(180deg, rgba(253,250,243,0.9) 0%, rgba(255,255,255,0.85) 100%); text-align: center; padding: 50px 20px 0; }
   .hero .brasao { width: 90px; height: 90px; margin-bottom: 16px; }
   .hero h1 { color: #b8912a; font-size: 34px; font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; }
   .hero .dates { color: #b8912a; font-size: 17px; font-weight: 600; margin-bottom: 30px; }
@@ -40,14 +77,14 @@
   .about-img { width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
 
   /* ========== OBJECTIVOS ========== */
-  .obj-section { background: #fdfaf3; padding: 60px 40px; }
+  .obj-section { background: rgba(253,250,243,0.92); padding: 60px 40px; }
   .obj-general { background: #b8912a; color: #fff; padding: 24px 30px; border-radius: 8px; max-width: 1000px; margin: 0 auto 40px; }
   .obj-general .label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; margin-bottom: 6px; }
   .obj-general p { font-size: 15px; line-height: 1.7; }
   .obj-specific { max-width: 1000px; margin: 0 auto; }
   .obj-specific h4 { text-align: center; color: #b8912a; font-size: 15px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px; }
   .obj-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .obj-card { background: #fff; border: 1px solid #ecd9a0; border-radius: 8px; padding: 24px; }
+  .obj-card { background: rgba(255,255,255,0.95); border: 1px solid #ecd9a0; border-radius: 8px; padding: 24px; }
   .obj-card .num { width: 28px; height: 28px; background: #f5e6b8; color: #b8912a; font-weight: 700; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 14px; }
   .obj-card h5 { color: #333; font-size: 14px; margin-bottom: 10px; font-weight: 700; }
   .obj-card p { color: #666; font-size: 13px; line-height: 1.6; }
@@ -55,12 +92,12 @@
   /* ========== RESULTADOS ESPERADOS ========== */
   .result-section { padding: 60px 40px; max-width: 1200px; margin: 0 auto; }
   .result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .result-card { background: #fdfaf3; padding: 24px; border-left: 3px solid #d4a72c; border-radius: 4px; color: #444; font-size: 14px; line-height: 1.7; }
+  .result-card { background: rgba(253,250,243,0.95); padding: 24px; border-left: 3px solid #d4a72c; border-radius: 4px; color: #444; font-size: 14px; line-height: 1.7; }
 
   /* ========== METODOLOGIA ========== */
-  .method-section { background: #fdfaf3; padding: 60px 40px; }
+  .method-section { background: rgba(253,250,243,0.92); padding: 60px 40px; }
   .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
-  .method-card { background: #fff; padding: 24px; border-radius: 8px; border: 1px solid #ecd9a0; }
+  .method-card { background: rgba(255,255,255,0.95); padding: 24px; border-radius: 8px; border: 1px solid #ecd9a0; }
   .method-card i { color: #b8912a; font-size: 20px; margin-right: 8px; }
   .method-card h5 { color: #b8912a; font-size: 15px; font-weight: 700; margin-bottom: 10px; display: inline-block; }
   .method-card p { color: #666; font-size: 14px; margin-top: 8px; }
@@ -100,10 +137,14 @@
     .obj-cards, .result-grid, .method-grid { grid-template-columns: 1fr; }
     .section, .obj-section, .result-section, .method-section { padding: 40px 20px; }
     .section h2 { font-size: 22px; }
+    .bg-watermark { background-attachment: scroll; }
   }
 </style>
 </head>
 <body>
+
+<!-- BACKGROUND WATERMARK -->
+<div class="bg-watermark" aria-hidden="true"></div>
 
 <!-- HEADER -->
 <header class="header">
@@ -113,11 +154,11 @@
   </div>
   <nav class="nav">
     <a href="index.html" class="active">Início</a>
-    
+    <a href="agenda.html">Agenda</a>
     <a href="programa.html">Programa</a>
     <a href="documentos.html">Documentos da reunião</a>
     <a href="fotografias.html">Fotografias</a>
-   
+    <a href="participantes.html">Participantes</a>
     <a href="contacto.html">Contacto</a>
   </nav>
 </header>
@@ -126,14 +167,14 @@
 <section class="hero">
   <img class="brasao" src="assets/images/logos.png" alt="Brasão">
   <h1>VI CONSELHO COORDENADOR DE SAÚDE - SSCM</h1>
-  <p class="dates">Cidade de Maputo — 11 e 12 de Outubro de 2026</p>
+  <p class="dates">Cidade de Maputo — 12 e 13 de Outubro de 2026</p>
   <img class="hero-img" src="assets/images/WhatsApp Image 2026-09-11 at 15.19.27.jpeg" alt="Reunião">
   <p class="lema">Por um Serviço Nacional de Saúde de Qualidade e Humanizado para Todos</p>
 </section>
 
 <!-- INFO BAR -->
 <div class="infobar">
-  <span><i class="far fa-calendar"></i> 11 - 12 de Outubro de 2026</span>
+  <span><i class="far fa-calendar"></i> 12 - 13 de Outubro de 2026</span>
   <span><i class="fas fa-map-marker-alt"></i> Cidade de Maputo, Moçambique</span>
   <span><i class="fas fa-user-md"></i> Sector Saúde</span>
 </div>

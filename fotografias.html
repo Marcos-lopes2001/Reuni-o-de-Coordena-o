@@ -23,7 +23,6 @@
 
   .container { max-width:1200px; margin:0 auto; padding:50px 20px; }
 
-  /* Filtros Dia 1 / Dia 2 */
   .day-tabs { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:36px; }
   .day-tabs button {
     padding:12px 36px;
@@ -80,7 +79,6 @@
   .foto .info h4 { color:#333; font-size:14px; font-weight:700; margin-bottom:4px; line-height:1.4; }
   .foto .info p { color:#8a6a10; font-size:12.5px; }
 
-  /* Lightbox */
   .lightbox {
     display:none;
     position:fixed;
@@ -154,7 +152,7 @@
 
 <header class="header">
   <div class="header-brand">
-   <img src="assets/images/logo.png" alt="Brasão">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emblem_of_Mozambique.svg/1200px-Emblem_of_Mozambique.svg.png" alt="Brasão">
     <span>Ministério da Saúde</span>
   </div>
   <nav class="nav">
@@ -163,7 +161,7 @@
     <a href="programa.html">Programa</a>
     <a href="documentos.html">Documentos da reunião</a>
     <a href="fotografias.html" class="active">Fotografias</a>
-   
+    <a href="participantes.html">Participantes</a>
     <a href="contacto.html">Contacto</a>
   </nav>
 </header>
@@ -190,7 +188,6 @@
   <div class="grid" id="fotosGrid"></div>
 </div>
 
-<!-- Lightbox -->
 <div class="lightbox" id="lightbox">
   <div class="lightbox-content">
     <button class="lightbox-close" onclick="closeLightbox()">
@@ -237,6 +234,7 @@ const fotos = {
     { t: 'Leitura e Aprovação da Síntese do 1º Dia', d: 'Secretariado · 08h00 - 08h30' },
     { t: 'Balanço das Actividades Inspectivas', d: 'Chefe Unid. Controlo Interno · 08h30 - 08h45' },
     { t: 'Balanço de Processos Disciplinares', d: 'Chefe Rep. Assuntos Jurídicos · 08h45 - 09h00' },
+    { t: 'Desempenho do Sector (DEPC)', d: 'Apresentação DEPC · 09h00 - 09h20' },
     { t: 'Painel II — Parcerias para Melhoria dos Resultados em Saúde', d: 'CCS · Medicus Mundi · Pathfinder · 09h20 - 10h25' },
     { t: 'Mesa Redonda — Bem-Estar e Saúde Mental', d: 'Dra. Lucia Mahota · Dr. Dirceu Mabunda · Dra. Noely Couto · 11h05 - 12h10' },
     { t: 'Painel IV — Transformação Digital e Inovação', d: 'DREAM · DIS · CS Polana Cimento · 12h20 - 13h25' },

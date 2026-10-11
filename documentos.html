@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Documentos · VI Reunião SSCM</title>
+<title>Documentos · VI Reunião de Coordenação do SSCM</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -28,23 +28,18 @@
   .filters button:hover { background:#fdfaf3; }
   .filters button.active { background:#b8912a; color:#fff; border-color:#b8912a; }
 
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:20px; }
-  .doc-card { background:#fdfaf3; border:1px solid #ecd9a0; border-radius:12px; padding:24px; transition:0.25s; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:24px; }
+  .doc-card { background:#fdfaf3; border:1px solid #ecd9a0; border-radius:12px; padding:26px; transition:0.25s; display:flex; flex-direction:column; }
   .doc-card:hover { transform:translateY(-4px); box-shadow:0 10px 30px rgba(184,145,42,0.12); border-color:#b8912a; }
-  .doc-card .icon { width:48px; height:48px; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
-  .doc-card .icon.pdf { background:#fee2e2; }
-  .doc-card .icon.pdf i { color:#dc2626; font-size:22px; }
-  .doc-card .icon.doc { background:#dbeafe; }
-  .doc-card .icon.doc i { color:#2563eb; font-size:22px; }
-  .doc-card h4 { color:#333; font-size:15px; font-weight:700; margin-bottom:6px; }
-  .doc-card p { color:#777; font-size:13px; margin-bottom:14px; line-height:1.5; }
-  .doc-card .meta { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .doc-card .icon { width:54px; height:54px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; background:#fff3e0; }
+  .doc-card .icon i { color:#ea580c; font-size:26px; }
+  .doc-card h4 { color:#333; font-size:15px; font-weight:700; margin-bottom:8px; line-height:1.4; }
+  .doc-card p { color:#777; font-size:13px; margin-bottom:16px; line-height:1.5; flex:1; }
+  .doc-card .meta { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:14px; }
   .doc-card .tag-day { background:#f5e6b8; color:#8a6a10; padding:3px 12px; border-radius:20px; font-size:11.5px; font-weight:700; }
-  .doc-card .tag-type { padding:3px 12px; border-radius:20px; font-size:11.5px; font-weight:700; color:#fff; }
-  .doc-card .tag-type.pdf { background:#dc2626; }
-  .doc-card .tag-type.doc { background:#2563eb; }
-  .doc-card .btn-dl { display:inline-flex; align-items:center; gap:6px; margin-top:14px; color:#b8912a; font-size:13px; font-weight:600; }
-  .doc-card .btn-dl:hover { text-decoration:underline; }
+  .doc-card .tag-type { padding:3px 12px; border-radius:20px; font-size:11.5px; font-weight:700; color:#fff; background:#ea580c; }
+  .doc-card .btn-dl { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:#b8912a; color:#fff; padding:10px 20px; border-radius:30px; font-size:13px; font-weight:600; transition:0.2s; }
+  .doc-card .btn-dl:hover { background:#8a6a10; }
 
   .footer { background:#8a6a10; color:rgba(255,255,255,0.85); text-align:center; padding:30px 20px; margin-top:40px; }
   .footer-links { display:flex; justify-content:center; gap:30px; margin-bottom:16px; flex-wrap:wrap; }
@@ -63,8 +58,8 @@
 
 <header class="header">
   <div class="header-brand">
-    <img src="assets/images/logo.png" alt="Brasão">
-    <span>Serviço da Saúde da Cidade de Maputo</span>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emblem_of_Mozambique.svg/1200px-Emblem_of_Mozambique.svg.png" alt="Brasão">
+    <span>Ministério da Saúde</span>
   </div>
   <nav class="nav">
     <a href="index.html">Início</a>
@@ -72,7 +67,7 @@
     <a href="programa.html">Programa</a>
     <a href="documentos.html" class="active">Documentos da reunião</a>
     <a href="fotografias.html">Fotografias</a>
-    <a href="comentarios.html">Comentários</a>
+    <a href="participantes.html">Participantes</a>
     <a href="contacto.html">Contacto</a>
   </nav>
 </header>
@@ -94,51 +89,65 @@
 
 <footer class="footer">
   <div class="footer-links">
-    
+    <a href="https://misau.gov.mz" target="_blank">Política de Privacidade</a>
+    <a href="#">Arquivo</a>
+    <a href="#">Entrar</a>
   </div>
   <hr>
-  <p>© 2026 Serviço da Saúde da Cidade de Maputo. Todos os direitos reservados.</p>
-   <P>Desenvolvido por Marcos Lopes</P>
+  <p>© 2026 Ministério da Saúde (MISAU). Todos os direitos reservados.</p>
 </footer>
 
 <script>
 const docs = [
-  { t:'Grau de Cumprimento do V Reunião SSCM', d:'Apresentação do Dr. Hortencio Faria', tipo:'pdf', dia:'Dia 1', f:'dia1' },
-  { t:'Análise do Desempenho do Sector', d:'Dept. Estudos, Planificação e Comunicação', tipo:'pdf', dia:'Dia 1', f:'dia1' },
-  { t:'Painel I - Saúde da Mulher e Criança', d:'Distrito KaMubukwana', tipo:'pdf', dia:'Dia 1', f:'dia1' },
-  { t:'Painel I - Prevenção e Controle de Doenças', d:'Distrito KaMavota', tipo:'pdf', dia:'Dia 1', f:'dia1' },
-  { t:'Painel I - Resposta a Emergências', d:'Resp. Provincial Doenças Não Transmissíveis', tipo:'pdf', dia:'Dia 1', f:'dia1' },
-  { t:'Painel II - Fluxo de Atendimento', d:'Área de Mavalane', tipo:'pdf', dia:'Dia 1', f:'dia1' },
-  { t:'Painel II - Cuidados Obstétricos e Neonatais', d:'Área de José Macamo', tipo:'pdf', dia:'Dia 1', f:'dia1' },
-  { t:'Gestão de Medicamentos e Material Cirúrgico', d:'Repartição de Logística e Farmácia', tipo:'doc', dia:'Dia 1', f:'dia1' },
-  { t:'Balanço das Actividades Inspectivas', d:'Unidade de Controlo Interno', tipo:'doc', dia:'Dia 1', f:'dia1' },
-  { t:'Desempenho Orçamental e Financeiro', d:'Dept. Administração e Finanças', tipo:'doc', dia:'Dia 2', f:'dia2' },
-  { t:'Projecto Mais Escolhas', d:'Resultados do projecto - Pathfinder', tipo:'pdf', dia:'Dia 2', f:'dia2' },
-  { t:'Humanização dos Cuidados de Saúde', d:'Apresentação temática', tipo:'pdf', dia:'Dia 2', f:'dia2' },
-  { t:'Plataforma de Telemedicina - DREAM', d:'Implementação em Moçambique', tipo:'pdf', dia:'Dia 2', f:'dia2' },
-  { t:'Registo Médico Electrónico', d:'Introdução do RME', tipo:'pdf', dia:'Dia 2', f:'dia2' },
-  { t:'Desafios no uso do SIS-RME', d:'Moderador: Dr. Baltazar Candrinho', tipo:'pdf', dia:'Dia 2', f:'dia2' },
+  {
+    t: 'HGJM — Modelo de Apresentação VI Reunião de Coordenação 2026 SSCM',
+    d: 'Hospital Geral José Macamo · Painel II — Organização da Rede Assistencial',
+    tipo: 'pptx',
+    dia: 'Dia 1',
+    f: 'dia1',
+    file: 'assets/- HGJM Modelo de Apresentacao VI Reuniao Cordenacao 2026 SSCM novo (2) (2).pptx'
+  },
+  {
+    t: 'HGM — Apresentação VI Reunião de Coordenação 2026 SSCM (Final II)',
+    d: 'Hospital Geral de Mavalane · Painel II — Rede de Emergência Obstétrica e Neonatal',
+    tipo: 'pptx',
+    dia: 'Dia 1',
+    f: 'dia1',
+    file: 'assets/HGM  Apresentacao VI Reuniao Cordenacao 2026 SSCM Final II (5).pptx'
+  },
+  {
+    t: 'Qualidade, Segurança e Humanização dos Cuidados',
+    d: 'Hospital Geral de Chamanculo · Painel II — Qualidade e Humanização',
+    tipo: 'pptx',
+    dia: 'Dia 1',
+    f: 'dia1',
+    file: 'assets/Qualidade, Seguranca e Humanizacao dos cuidados.pptx'
+  }
 ];
 
 function render(filter) {
   const grid = document.getElementById('docsGrid');
   const filtered = filter === 'all' ? docs : docs.filter(d => d.f === filter);
+
   if (!filtered.length) {
-    grid.innerHTML = '<p style="text-align:center;color:#999;grid-column:1/-1;">Nenhum documento encontrado.</p>';
+    grid.innerHTML = '<p style="text-align:center;color:#999;grid-column:1/-1;padding:40px;">Nenhum documento disponível para este dia.</p>';
     return;
   }
+
   grid.innerHTML = filtered.map(d => `
     <div class="doc-card">
-      <div class="icon ${d.tipo}">
-        <i class="fas fa-file-${d.tipo === 'pdf' ? 'pdf' : 'word'}"></i>
+      <div class="icon">
+        <i class="fas fa-file-powerpoint"></i>
       </div>
       <h4>${d.t}</h4>
       <p>${d.d}</p>
       <div class="meta">
         <span class="tag-day">${d.dia}</span>
-        <span class="tag-type ${d.tipo}">${d.tipo.toUpperCase()}</span>
+        <span class="tag-type">${d.tipo.toUpperCase()}</span>
       </div>
-      <a href="#" class="btn-dl"><i class="fas fa-download"></i> Descarregar</a>
+      <a href="${d.file}" class="btn-dl" download>
+        <i class="fas fa-download"></i> Descarregar
+      </a>
     </div>
   `).join('');
 }

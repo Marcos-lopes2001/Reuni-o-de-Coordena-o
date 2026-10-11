@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Programa · VI Reunião SSCM</title>
+<title>Programa · VI Reunião de Coordenação do SSCM</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -17,7 +17,7 @@
   .nav a { color:#fff; padding:6px 14px; font-size:13.5px; border-radius:4px; font-weight:500; }
   .nav a:hover, .nav a.active { background:rgba(255,255,255,0.15); }
 
-  .container { max-width:900px; margin:0 auto; padding:50px 20px; }
+  .container { max-width:1000px; margin:0 auto; padding:50px 20px; }
   .page-title { color:#b8912a; font-size:36px; font-weight:800; text-align:center; margin-bottom:6px; }
   .page-sub { color:#666; font-size:15px; text-align:center; margin-bottom:20px; }
   .badges { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:32px; }
@@ -42,11 +42,14 @@
   .prog-item { position:relative; background:#fdfaf3; border:1px solid #ecd9a0; border-radius:10px; padding:16px 20px; margin-bottom:10px; display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap; }
   .prog-item::before { content:''; position:absolute; left:-18px; top:24px; width:12px; height:12px; background:#d4a72c; border-radius:50%; border:3px solid #fff; box-shadow:0 0 0 1px #ecd9a0; }
 
-  .prog-time { color:#b8912a; font-weight:700; font-size:13px; min-width:110px; display:inline-flex; align-items:center; gap:6px; }
+  .prog-time { color:#b8912a; font-weight:700; font-size:13px; min-width:130px; display:inline-flex; align-items:center; gap:6px; }
   .prog-content { flex:1; }
   .prog-content h5 { color:#333; font-size:14.5px; font-weight:600; margin-bottom:4px; line-height:1.4; }
   .prog-content .resp { color:#8a6a10; font-size:12.5px; display:inline-flex; align-items:center; gap:6px; }
   .prog-content .resp i { font-size:10px; }
+  .prog-content .sub { color:#666; font-size:13px; margin-top:8px; padding:8px 12px; background:#fff; border-left:3px solid #d4a72c; border-radius:4px; }
+  .prog-content .sub strong { color:#333; display:block; margin-bottom:2px; }
+  .prog-content .sub span { color:#8a6a10; font-size:12px; }
 
   .tag { padding:3px 12px; border-radius:20px; font-size:11px; font-weight:700; color:#fff; letter-spacing:0.3px; }
   .tag.apres { background:#2563eb; }
@@ -54,6 +57,8 @@
   .tag.org { background:#0891b2; }
   .tag.inter { background:#6b7280; }
   .tag.encerr { background:#dc2626; }
+  .tag.painel { background:#7c3aed; }
+  .tag.mesa { background:#059669; }
 
   .footer { background:#8a6a10; color:rgba(255,255,255,0.85); text-align:center; padding:30px 20px; margin-top:40px; }
   .footer-links { display:flex; justify-content:center; gap:30px; margin-bottom:16px; flex-wrap:wrap; }
@@ -73,8 +78,8 @@
 
 <header class="header">
   <div class="header-brand">
-   <img src="assets/images/logo.png" alt="Brasão">
-    <span>Serviço da Saúde da Cidade de Maputo</span>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emblem_of_Mozambique.svg/1200px-Emblem_of_Mozambique.svg.png" alt="Brasão">
+    <span>Ministério da Saúde</span>
   </div>
   <nav class="nav">
     <a href="index.html">Início</a>
@@ -82,7 +87,7 @@
     <a href="programa.html" class="active">Programa</a>
     <a href="documentos.html">Documentos da reunião</a>
     <a href="fotografias.html">Fotografias</a>
-    <a href="comentarios.html">Comentários</a>
+    <a href="participantes.html">Participantes</a>
     <a href="contacto.html">Contacto</a>
   </nav>
 </header>
@@ -92,20 +97,20 @@
   <p class="page-sub">VI Reunião de Coordenação do SSCM</p>
 
   <div class="badges">
-    <span class="badge"><i class="far fa-calendar"></i> 01 - 02 de Outubro de 2026</span>
+    <span class="badge"><i class="far fa-calendar"></i> 12 - 13 de Setembro de 2026</span>
     <span class="badge"><i class="fas fa-map-marker-alt"></i> Cidade de Maputo, Moçambique</span>
   </div>
 
   <div class="days-switch">
-    <button class="active" data-day="1"><span class="lbl">Out</span><span class="num">01</span></button>
-    <button data-day="2"><span class="lbl">Out</span><span class="num">02</span></button>
-    <button disabled style="opacity:0.4;"><span class="lbl">Out</span><span class="num">03</span></button>
+    <button class="active" data-day="1"><span class="lbl">Set</span><span class="num">12</span></button>
+    <button data-day="2"><span class="lbl">Set</span><span class="num">13</span></button>
+    <button disabled style="opacity:0.4;"><span class="lbl">Set</span><span class="num">14</span></button>
   </div>
 
   <div class="prog-header">
     <div>
-      <h3>VI Reunião de Coordenação do SSCM</h3>
-      <div class="ph-date" id="phDate">01 de Outubro de 2026</div>
+      <h3 id="phTitle">VI Reunião de Coordenação do SSCM</h3>
+      <div class="ph-date" id="phDate">12 de Setembro de 2026</div>
     </div>
     <span class="ph-day" id="phDay">Dia 1 de 2</span>
   </div>
@@ -115,79 +120,124 @@
 
 <footer class="footer">
   <div class="footer-links">
-  
+    <a href="https://misau.gov.mz" target="_blank">Política de Privacidade</a>
+    <a href="#">Arquivo</a>
+    <a href="#">Entrar</a>
   </div>
   <hr>
-  <p>© 2026 Serviço da Saúde da Cidade de Maputo. Todos os direitos reservados.</p>
-   <P>Desenvolvido por Marcos Lopes</P>
+  <p>© 2026 Ministério da Saúde (MISAU). Todos os direitos reservados.</p>
 </footer>
 
 <script>
 const programa = {
   1: [
-    { t:'08:30 - 09:00', titulo:'Recepção dos participantes', resp:'Protocolo', tag:'organizacao' },
-    { t:'09:00 - 09:20', titulo:'Chegada do Administrador do Distrito', resp:'Protocolo', tag:'organizacao' },
-    { t:'09:20 - 09:40', titulo:'Chegada de Sua Excelência Vicente Joaquim Imede', resp:'Comité de Recepção', tag:'organizacao' },
-    { t:'09:40 - 10:00', titulo:'Visita a Feira de Exposição de Oferta de Serviços', resp:'RAM', tag:'apresentacao' },
-    { t:'10:00 - 10:15', titulo:'Hino Nacional', resp:'Grupo Cultural do HGCH', tag:'organizacao' },
-    { t:'10:15 - 10:25', titulo:'Mensagem de Boas-Vindas', resp:'Exmo. Sr. Administrador do Distrito', tag:'apresentacao' },
-    { t:'10:25 - 10:40', titulo:'Apresentação dos Objectivos do Encontro', resp:'Exma. Dra. Paloma Maripiha - Directora do SSCM', tag:'apresentacao' },
-    { t:'10:40 - 10:55', titulo:'Distinção dos Melhores Funcionários', resp:'Sua Excelência Secretário de Estado', tag:'organizacao' },
-    { t:'10:55 - 11:10', titulo:'Discurso de Abertura', resp:'Sua Excelência Secretário de Estado', tag:'apresentacao' },
-    { t:'11:10 - 11:20', titulo:'Momento Cultural', resp:'Grupo Cultural', tag:'organizacao' },
-    { t:'11:20 - 11:50', titulo:'Pausa para o café', resp:'Todos', tag:'intervalo' },
-    { t:'11:50 - 12:20', titulo:'Grau de Cumprimento das Recomendações do V Reunião SSCM', resp:'Médica Chefe: Neusa Pene', tag:'apresentacao' },
-    { t:'12:20 - 12:35', titulo:'Discussão', resp:'S. Excia. Ministro', tag:'discussao' },
-    { t:'12:35 - 13:05', titulo:'Análise do Desempenho do Sector', resp:'Chefe Dept. Estudos, Planificação e Comunicação', tag:'apresentacao' },
-    { t:'13:05 - 13:20', titulo:'Discussão', resp:'Exma. Directora do SSCM', tag:'discussao' },
-    { t:'13:20 - 13:50', titulo:'Painel I: Desafios na Oferta de Cuidados à Mulher e Criança', resp:'Distrito KaMubukwana', tag:'apresentacao' },
-    { t:'13:50 - 14:20', titulo:'Painel I: Prevenção e Controle de Doenças', resp:'Distrito KaMavota', tag:'apresentacao' },
-    { t:'14:20 - 14:35', titulo:'Painel I: Resposta a Emergências', resp:'Resp. Provincial Doenças Não Transmissíveis', tag:'apresentacao' },
-    { t:'14:35 - 15:35', titulo:'Pausa para o almoço', resp:'Todos', tag:'intervalo' },
-    { t:'15:35 - 16:05', titulo:'Painel II: Fluxo de Atendimento e Pressão Hospitalar', resp:'Área de Mavalane', tag:'apresentacao' },
-    { t:'16:05 - 16:35', titulo:'Painel II: Cuidados Obstétricos e Neonatais', resp:'Área de José Macamo', tag:'apresentacao' },
-    { t:'16:35 - 17:05', titulo:'Desafios na Gestão de Medicamentos e Material Cirúrgico', resp:'Chefe Rep. Logística e Farmácia', tag:'apresentacao' },
-    { t:'17:05 - 17:20', titulo:'Discussão', resp:'Exma. Directora do SSCM', tag:'discussao' },
-    { t:'17:20 - 17:40', titulo:'Balanço Anual das Actividades Inspectivas', resp:'Chefe Unidade Controlo Interno', tag:'apresentacao' },
-    { t:'17:40 - 18:00', titulo:'Balanço dos Processos Disciplinares', resp:'Chefe Repartição Assuntos Jurídicos', tag:'apresentacao' },
-    { t:'18:00 - 18:15', titulo:'Discussão', resp:'Exma. Directora do SSCM', tag:'discussao' },
-    { t:'18:15', titulo:'Fim dos trabalhos', resp:'Todos', tag:'encerramento' }
+    { t:'07h30 - 08h00', titulo:'Chegada e Registo dos Participantes', resp:'Protocolo', tag:'organizacao' },
+    { t:'08h00 - 08h15', titulo:'Chegada do Administrador do Distrito', resp:'Protocolo', tag:'organizacao' },
+    { t:'08h15 - 08h30', titulo:'Chegada de Sua Excelência Vicente Joaquim Imede - Secretário de Estado na Cidade de Maputo', resp:'Comité de Recepção', tag:'organizacao' },
+    { t:'08h30 - 08h45', titulo:'Visita a Feira de Exposição de Oferta de Serviços', resp:'DS - RSP', tag:'apresentacao' },
+    { t:'08h45 - 08h50', titulo:'Entrada de Sua Excelência Secretário de Estado na Sala de Reuniões', resp:'Protocolo', tag:'organizacao' },
+    { t:'08h50 - 08h55', titulo:'Hino Nacional', resp:'Todos', tag:'organizacao' },
+    { t:'08h55 - 09h05', titulo:'Mensagem de Boas-Vindas', resp:'Exmo. Sr. Administrador do Distrito KaMubukwana', tag:'apresentacao' },
+    { t:'09h05 - 09h15', titulo:'Intervenção do Parceiro de Primeiro Contacto', resp:'CCS', tag:'apresentacao' },
+    { t:'09h15 - 09h25', titulo:'Apresentação dos Objectivos do Encontro', resp:'Exma. Sra. Directora do SSCM - Paloma Maripiha', tag:'apresentacao' },
+    { t:'09h25 - 09h35', titulo:'Momento Cultural', resp:'Grupo Cultural', tag:'organizacao' },
+    { t:'09h35 - 09h50', titulo:'Discurso de Abertura por Sua Excelência Secretário de Estado na Cidade de Maputo', resp:'Sua Excelência Secretário de Estado na Cidade de Maputo - Arquiteto Vicente Joaquim Imede', tag:'apresentacao' },
+    { t:'09h50 - 10h10', titulo:'Distinção do Melhor Hospital e Distrito', resp:'Sua Excelência Secretário de Estado na Cidade de Maputo - Arquiteto Vicente Joaquim Imede', tag:'organizacao' },
+    { t:'10h10 - 10h20', titulo:'Foto de ocasião e Retirada de Sua Excelência Secretário de Estado na Cidade de Maputo', resp:'Todos', tag:'organizacao' },
+    { t:'10h20 - 10h35', titulo:'Grau do Cumprimento das Recomendações do V Reunião de Coordenação SSCM', resp:'Chefe do Departamento de Estudos, Planificação e Comunicação', tag:'apresentacao' },
+    { t:'10h35 - 10h50', titulo:'Discussão', resp:'Exma. Senhora Directora do SSCM - Paloma Maripiha', tag:'discussao' },
+    { t:'10h50 - 11h35', titulo:'PAUSA PARA CAFÉ', resp:'Todos', tag:'intervalo' },
+    { t:'11h40 - 12h05', titulo:'Análise do Desempenho do sector', resp:'Chefe do Departamento de Estudos, Planificação e Comunicação', tag:'apresentacao' },
+    { t:'12h05 - 12h25', titulo:'Discussão', resp:'Exma. Sra. Directora do SSCM', tag:'discussao' },
+    { t:'12h25 - 13h30', titulo:'Painel I: Desafios e Respostas as Prioridades de Saúde Pública na Cidade de Maputo', resp:'', tag:'painel',
+      sub:[
+        { t:'Saúde da Mulher e da Criança: acesso, continuidade e qualidade dos cuidados - DM KaMubukwana', r:'MCD - KaMubukwana (12h25-12h40)' },
+        { t:'Prevenção e Controlo de Doenças: cobertura, integração dos serviços e resposta às prioridades do distrito - DM KaMavota', r:'MCD - KaMavota (12h40-12h55)' },
+        { t:'Resposta às Emergências de Saúde Pública: avaliação, lições aprendidas e fortalecimento da prontidão', r:'Responsável Provincial do Programa de Vigilância (12h55-13h10)' },
+        { t:'Moderador do Debate', r:'Dra. Edna Viegas (13h10-13h30)' }
+      ]
+    },
+    { t:'13h30 - 14h30', titulo:'Painel II: Rede Assistencial da Cidade de Maputo: acesso, referência, capacidade de resposta e qualidade dos cuidados', resp:'', tag:'painel',
+      sub:[
+        { t:'Organização da Rede Assistencial: fluxo de utentes, referência, contra-referência e pressão sobre os hospitais - Área do HGJM', r:'Director do Hospital (13h30-13h45)' },
+        { t:'Rede de Emergência Obstétrica e Neonatal: referência e capacidade resolutiva - Área do HGM', r:'Director do Hospital (13h45-14h00)' },
+        { t:'Qualidade, Segurança e Humanização dos Cuidados: desafios e intervenções para melhores resultados - Área do HG Chamanculo', r:'Director do Hospital (14h00-14h15)' },
+        { t:'Moderador do Debate', r:'Directora do HCM (14h15-14h30)' }
+      ]
+    },
+    { t:'14h30 - 14h50', titulo:'PAUSA PARA ALMOÇO', resp:'Todos', tag:'intervalo' },
+    { t:'14h50 - 15h05', titulo:'Execução orçamental do sector - 2025 e Janeiro-Julho 2026', resp:'Chefe do Departamento de Administração e Finanças', tag:'apresentacao' },
+    { t:'15h05 - 15h20', titulo:'Discussão', resp:'Exma. Senhora Directora do SSCM', tag:'discussao' },
+    { t:'15h20 - 15h35', titulo:'Lei do Sistema Nacional de Saúde - inovações e perspectivas de implementação', resp:'DPC - MISAU', tag:'apresentacao' },
+    { t:'15h35 - 15h50', titulo:'Discussão', resp:'Exma. Senhora Directora do SSCM', tag:'discussao' },
+    { t:'15h50 - 16h06', titulo:'Considerações Finais e Fim do Trabalho do 1º dia', resp:'Exma. Sra. Directora do SSCM', tag:'encerramento' }
   ],
   2: [
-    { t:'08:30 - 09:00', titulo:'Leitura e aprovação da síntese do 1º dia', resp:'Secretariado', tag:'organizacao' },
-    { t:'09:00 - 09:30', titulo:'Desempenho Orçamental e Financeiro', resp:'Chefe Dept. Administração e Finanças', tag:'apresentacao' },
-    { t:'09:30 - 09:50', titulo:'Discussão', resp:'S. Excia. Ministro', tag:'discussao' },
-    { t:'09:50 - 10:15', titulo:'Avaliação de pacientes retestados feita no CS Alto Maé', resp:'CCS', tag:'apresentacao' },
-    { t:'10:15 - 10:35', titulo:'Discussão', resp:'Exma. Directora do SSCM', tag:'discussao' },
-    { t:'10:35 - 11:05', titulo:'Pausa para o café', resp:'Todos', tag:'intervalo' },
-    { t:'11:05 - 11:35', titulo:'Resultados do Projecto Mais Escolhas', resp:'Pathfinder', tag:'apresentacao' },
-    { t:'11:35 - 11:55', titulo:'Discussão', resp:'Exma. Directora do SSCM', tag:'discussao' },
-    { t:'11:55 - 12:10', titulo:'Humanização dos Cuidados de Saúde', resp:'—', tag:'apresentacao' },
-    { t:'12:10 - 12:50', titulo:'Mesa Redonda', resp:'—', tag:'discussao' },
-    { t:'12:50 - 13:10', titulo:'Painel V: Implementação da Plataforma de Telemedicina - DREAM', resp:'DREAM', tag:'apresentacao' },
-    { t:'13:10 - 13:30', titulo:'Painel V: Introdução de Registo Médico Electrónico', resp:'DPC', tag:'apresentacao' },
-    { t:'13:30 - 13:50', titulo:'Painel V: Desafios no uso do SIS-RME', resp:'Moderador: Dr. Baltazar Candrinho', tag:'apresentacao' },
-    { t:'13:50 - 14:10', titulo:'Discussão', resp:'Exma. Directora do SSCM', tag:'discussao' },
-    { t:'14:10', titulo:'Considerações finais e encerramento', resp:'Exma. Directora do SSCM', tag:'encerramento' }
+    { t:'07h30 - 08h00', titulo:'Chegada e Registo dos Participantes', resp:'Todos', tag:'organizacao' },
+    { t:'08h00 - 08h30', titulo:'Leitura e Aprovação da Síntese do 1º dia', resp:'Secretariado', tag:'organizacao' },
+    { t:'08h30 - 08h45', titulo:'Balanço das Actividades Inspectivas', resp:'Chefe da Unidade de Controlo Interno', tag:'apresentacao' },
+    { t:'08h45 - 09h00', titulo:'Balanço de Processos Disciplinares', resp:'Chefe da Repartição de Assuntos Jurídicos', tag:'apresentacao' },
+    { t:'09h00 - 09h20', titulo:'Discussão', resp:'Exma. Sra. Directora do SSCM', tag:'discussao' },
+    { t:'09h20 - 10h25', titulo:'PAINEL II — Parcerias para a Melhoria dos Resultados em Saúde na Cidade de Maputo', resp:'', tag:'painel',
+      sub:[
+        { t:'Impacto de redução de Recursos Financeiros do Governo Americano na implementação dos Programas de Saúde e Proposta de Soluções', r:'CCS (09h20-09h35)' },
+        { t:'Da actuação isolada à resposta coordenada: boas práticas e aprendizagens do Mecanismo Multissectorial no atendimento às sobreviventes de violência baseada no género na Cidade de Maputo', r:'Medicus Mundi (09h35-09h50)' },
+        { t:'Resultados do Projecto MAIS ESCOLHAS', r:'Pathfinder - Ivania Euadaba (09h50-10h05)' },
+        { t:'Moderador', r:'Baltazar Candrinho (10h05-10h25)' }
+      ]
+    },
+    { t:'10h25 - 11h05', titulo:'PAUSA PARA CAFÉ', resp:'Todos', tag:'intervalo' },
+    { t:'11h05 - 12h10', titulo:'Mesa Redonda: Bem-Estar e Saúde Mental dos Trabalhadores de Saúde', resp:'', tag:'mesa',
+      sub:[
+        { t:'Um olhar sobre o suicídio em trabalhadores de saúde: factores de risco e estratégias de prevenção.', r:'Dra. Lucia Mahota (11h05-11h20)' },
+        { t:'Problemas de uso de álcool e drogas no trabalhador: implicações para o local de trabalho.', r:'Dr. Dirceu Mabunda (11h20-11h35)' },
+        { t:'Jogo patológico: mecanismos, factores de riscos e estratégias de prevenção no local de trabalho', r:'Dra. Noely Couto (11h35-11h50)' },
+        { t:'Moderador', r:'Dra. Serena Schuachuio (11h50-12h10)' }
+      ]
+    },
+    { t:'12h20 - 13h25', titulo:'Painel IV: Transformação Digital e Inovação para a Melhoria dos Serviços de Saúde', resp:'', tag:'painel',
+      sub:[
+        { t:'Telemedicina como Estratégia para Ampliar o Acesso e Apoiar a Prestação de Cuidados de Saúde – Experiência da Plataforma DREAM - DREAM Comunidade Sant\'Egidio', r:'DREAM (12h20-12h35)' },
+        { t:'Registo Médico Electrónico: avanços na digitalização e continuidade dos cuidados ao utente', r:'DIS (12h35-12h50)' },
+        { t:'Do Registo ao Uso da Informação: desafios e oportunidades na utilização dos sistemas digitais de saúde (SIS-RME) - DM KaMpfumu', r:'Directora do CS Polana Cimento (12h50-13h05)' },
+        { t:'Moderador', r:'Dr. Mario Jacob (13h05-13h25)' }
+      ]
+    },
+    { t:'13h25 - 15h00', titulo:'SESSÃO DE ENCERRAMENTO', resp:'', tag:'encerramento',
+      sub:[
+        { t:'Momento Cultural', r:'Banda' },
+        { t:'Leitura do Comunicado Final', r:'Secretariado' },
+        { t:'Discurso de Encerramento', r:'Excelentíssima Senhora Directora do Serviço de Saúde da Cidade de Maputo' },
+        { t:'Entoação do Hino Nacional', r:'Todos' },
+        { t:'ALMOÇO DE CONFRATERNIZAÇÃO', r:'Todos' }
+      ]
+    }
   ]
 };
 
-const tagLabel = { apresentacao:'Apresentação', discussao:'Discussão', organizacao:'Organização', intervalo:'Intervalo', encerramento:'Encerramento' };
-const tagClass = { apresentacao:'apres', discussao:'disc', organizacao:'org', intervalo:'inter', encerramento:'encerr' };
+const tagLabel = { apresentacao:'Apresentação', discussao:'Discussão', organizacao:'Organização', intervalo:'Intervalo', encerramento:'Encerramento', painel:'Painel', mesa:'Mesa Redonda' };
+const tagClass = { apresentacao:'apres', discussao:'disc', organizacao:'org', intervalo:'inter', encerramento:'encerr', painel:'painel', mesa:'mesa' };
 
 function render(day) {
   const tl = document.getElementById('timeline');
-  tl.innerHTML = programa[day].map(item => `
-    <div class="prog-item">
-      <span class="prog-time"><i class="far fa-clock"></i> ${item.t}</span>
-      <div class="prog-content">
-        <h5>${item.titulo}</h5>
-        <span class="resp"><i class="fas fa-user"></i> ${item.resp}</span>
+  tl.innerHTML = programa[day].map(item => {
+    let subHtml = '';
+    if (item.sub) {
+      subHtml = item.sub.map(s => `<div class="sub"><strong>${s.t}</strong><span><i class="far fa-clock"></i> ${s.r}</span></div>`).join('');
+    }
+    return `
+      <div class="prog-item">
+        <span class="prog-time"><i class="far fa-clock"></i> ${item.t}</span>
+        <div class="prog-content">
+          <h5>${item.titulo}</h5>
+          ${item.resp ? `<span class="resp"><i class="fas fa-user"></i> ${item.resp}</span>` : ''}
+          ${subHtml}
+        </div>
+        <span class="tag ${tagClass[item.tag]}">${tagLabel[item.tag]}</span>
       </div>
-      <span class="tag ${tagClass[item.tag]}">${tagLabel[item.tag]}</span>
-    </div>
-  `).join('');
-  document.getElementById('phDate').textContent = day === 1 ? '01 de Outubro de 2026' : '02 de Outubro de 2026';
+    `;
+  }).join('');
+  document.getElementById('phDate').textContent = day === 1 ? '12 de Setembro de 2026' : '13 de Setembro de 2026';
   document.getElementById('phDay').textContent = day === 1 ? 'Dia 1 de 2' : 'Dia 2 de 2';
 }
 

@@ -21,116 +21,129 @@
   .banner h1 { font-size:38px; font-weight:800; margin-bottom:6px; }
   .banner p { font-size:15px; opacity:0.95; }
 
-  .container { max-width:1200px; margin:0 auto; padding:50px 20px; }
+  .container { max-width:1100px; margin:0 auto; padding:60px 20px; }
 
-  .day-tabs { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:36px; }
-  .day-tabs button {
-    padding:12px 36px;
-    border-radius:30px;
-    border:2px solid #ecd9a0;
-    background:#fff;
+  .intro { text-align:center; margin-bottom:50px; }
+  .intro h2 { color:#b8912a; font-size:24px; font-weight:800; margin-bottom:12px; }
+  .intro p { color:#666; font-size:15px; max-width:650px; margin:0 auto; line-height:1.7; }
+
+  .drive-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:28px; }
+
+  .drive-card {
+    background:#fdfaf3;
+    border:1px solid #ecd9a0;
+    border-radius:16px;
+    overflow:hidden;
+    transition:0.3s;
+    display:flex;
+    flex-direction:column;
+  }
+  .drive-card:hover {
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(184,145,42,0.18);
+    border-color:#b8912a;
+  }
+
+  .drive-card .card-head {
+    background:linear-gradient(135deg,#b8912a 0%,#d4a72c 100%);
+    color:#fff;
+    padding:24px 26px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .drive-card .card-head .day-icon {
+    width:56px;
+    height:56px;
+    background:rgba(255,255,255,0.2);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    flex-shrink:0;
+  }
+  .drive-card .card-head .day-info .day-lbl {
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    opacity:0.85;
+    font-weight:700;
+  }
+  .drive-card .card-head .day-info h3 {
+    font-size:20px;
+    font-weight:800;
+    margin-top:2px;
+  }
+
+  .drive-card .card-body {
+    padding:26px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+  }
+  .drive-card .card-body .desc {
+    color:#666;
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:20px;
+    flex:1;
+  }
+
+  .drive-card .meta-line {
+    display:flex;
+    align-items:center;
+    gap:8px;
     color:#8a6a10;
-    cursor:pointer;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:18px;
+    padding:10px 14px;
+    background:#fff;
+    border-radius:8px;
+    border:1px solid #ecd9a0;
+  }
+  .drive-card .meta-line i { color:#b8912a; }
+
+  .btn-drive {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:#b8912a;
+    color:#fff;
+    padding:14px 24px;
+    border-radius:30px;
     font-weight:700;
     font-size:14px;
     transition:0.2s;
-    font-family:inherit;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-  }
-  .day-tabs button i { font-size:15px; }
-  .day-tabs button:hover { background:#fdfaf3; border-color:#b8912a; }
-  .day-tabs button.active {
-    background:#b8912a;
-    color:#fff;
-    border-color:#b8912a;
-    box-shadow:0 6px 18px rgba(184,145,42,0.25);
-  }
-
-  .day-title {
     text-align:center;
+  }
+  .btn-drive:hover {
+    background:#8a6a10;
+    transform:scale(1.02);
+  }
+  .btn-drive i { font-size:15px; }
+
+  .info-box {
+    margin-top:50px;
+    background:#fdfaf3;
+    border-left:4px solid #b8912a;
+    border-radius:8px;
+    padding:20px 26px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .info-box i {
     color:#b8912a;
-    font-size:20px;
-    font-weight:800;
-    margin-bottom:28px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
+    font-size:22px;
+    margin-top:2px;
   }
-  .day-title::before,
-  .day-title::after {
-    content:'';
-    height:2px;
-    width:60px;
-    background:#ecd9a0;
-    border-radius:2px;
-  }
-
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; }
-
-  .foto { background:#fdfaf3; border:1px solid #ecd9a0; border-radius:12px; overflow:hidden; transition:0.25s; cursor:pointer; }
-  .foto:hover { transform:translateY(-4px); box-shadow:0 10px 30px rgba(184,145,42,0.15); border-color:#b8912a; }
-  .foto .img { height:200px; background:linear-gradient(135deg,#f5e6b8 0%,#ecd9a0 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
-  .foto .img i { font-size:60px; color:#b8912a; opacity:0.55; transition:0.25s; }
-  .foto:hover .img i { opacity:0.85; transform:scale(1.1); }
-  .foto .info { padding:16px 18px; }
-  .foto .info h4 { color:#333; font-size:14px; font-weight:700; margin-bottom:4px; line-height:1.4; }
-  .foto .info p { color:#8a6a10; font-size:12.5px; }
-
-  .lightbox {
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.85);
-    z-index:2000;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-  }
-  .lightbox.active { display:flex; }
-  .lightbox-content {
-    max-width:900px;
-    width:100%;
-    background:#fff;
-    border-radius:12px;
-    overflow:hidden;
-    position:relative;
-  }
-  .lightbox-img {
-    height:450px;
-    background:linear-gradient(135deg,#f5e6b8 0%,#ecd9a0 100%);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .lightbox-img i { font-size:100px; color:#b8912a; opacity:0.6; }
-  .lightbox-info { padding:20px 24px; background:#fdfaf3; }
-  .lightbox-info h3 { color:#333; font-size:16px; margin-bottom:6px; }
-  .lightbox-info p { color:#8a6a10; font-size:13px; }
-  .lightbox-close {
-    position:absolute;
-    top:12px;
-    right:12px;
-    width:36px;
-    height:36px;
-    background:#b8912a;
-    color:#fff;
-    border:none;
-    border-radius:50%;
-    cursor:pointer;
-    font-size:16px;
-    transition:0.2s;
-  }
-  .lightbox-close:hover { background:#8a6a10; }
-
-  .empty {
-    text-align:center;
-    color:#999;
-    padding:60px 20px;
-    grid-column:1/-1;
+  .info-box p {
+    color:#555;
     font-size:14px;
+    line-height:1.7;
   }
 
   .footer { background:#8a6a10; color:rgba(255,255,255,0.85); text-align:center; padding:30px 20px; margin-top:40px; }
@@ -143,8 +156,7 @@
     .header{padding:10px 16px;}
     .banner h1{font-size:26px;}
     .container{padding:30px 16px;}
-    .day-tabs button { padding:10px 22px; font-size:13px; }
-    .lightbox-img { height:280px; }
+    .drive-grid{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -152,16 +164,16 @@
 
 <header class="header">
   <div class="header-brand">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emblem_of_Mozambique.svg/1200px-Emblem_of_Mozambique.svg.png" alt="Brasão">
+    <img src="assets/images/logo.png" alt="Brasão">
     <span>Ministério da Saúde</span>
   </div>
   <nav class="nav">
     <a href="index.html">Início</a>
-  
+    
     <a href="programa.html">Programa</a>
     <a href="documentos.html">Documentos da reunião</a>
     <a href="fotografias.html" class="active">Fotografias</a>
-    
+
     <a href="contacto.html">Contacto</a>
   </nav>
 </header>
@@ -172,35 +184,70 @@
 </div>
 
 <div class="container">
-  <div class="day-tabs">
-    <button class="active" data-day="1">
-      <i class="fas fa-sun"></i> Dia 1 — 12 de Setembro
-    </button>
-    <button data-day="2">
-      <i class="fas fa-moon"></i> Dia 2 — 13 de Setembro
-    </button>
+
+  <div class="intro">
+    <h2>Acesso às Fotografias</h2>
+    <p>As fotografias oficiais da VI Reunião de Coordenação estão organizadas por dia no Google Drive. Clique no botão do dia desejado para visualizar ou descarregar as imagens.</p>
   </div>
 
-  <div class="day-title" id="dayTitle">
-    <span>Dia 1 · 12 de Setembro de 2026</span>
-  </div>
+  <div class="drive-grid">
 
-  <div class="grid" id="fotosGrid"></div>
-</div>
-
-<div class="lightbox" id="lightbox">
-  <div class="lightbox-content">
-    <button class="lightbox-close" onclick="closeLightbox()">
-      <i class="fas fa-times"></i>
-    </button>
-    <div class="lightbox-img">
-      <i class="fas fa-image"></i>
+    <!-- DIA 1 -->
+    <div class="drive-card">
+      <div class="card-head">
+        <div class="day-icon"><i class="fas fa-sun"></i></div>
+        <div class="day-info">
+          <div class="day-lbl">Dia 1</div>
+          <h3>12 de Outubro de 2026</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="desc">Cerimónia de abertura, discursos, painéis temáticos e momentos culturais do primeiro dia da reunião.</p>
+        <div class="meta-line">
+          <i class="fas fa-images"></i> Galeria completa no Google Drive
+        </div>
+        <a class="btn-drive"
+           href="https://drive.google.com/drive/folders/1YgauI7u2UTYkMmZnAmTwXV9EaEa09Dd_?usp=sharing"
+           target="_blank"
+           rel="noopener noreferrer">
+          <i class="fab fa-google-drive"></i> Abrir Galeria do Dia 1
+        </a>
+      </div>
     </div>
-    <div class="lightbox-info">
-      <h3 id="lbTitle"></h3>
-      <p id="lbDesc"></p>
+
+    <!-- DIA 2 -->
+    <div class="drive-card">
+      <div class="card-head">
+        <div class="day-icon"><i class="fas fa-moon"></i></div>
+        <div class="day-info">
+          <div class="day-lbl">Dia 2</div>
+          <h3>13 de Outubro de 2026</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="desc">Sessões da manhã, mesa redonda, painéis temáticos, sessão de encerramento e almoço de confraternização.</p>
+        <div class="meta-line">
+          <i class="fas fa-images"></i> Galeria completa no Google Drive
+        </div>
+        <a class="btn-drive"
+           href="#"
+           target="_blank"
+           rel="noopener noreferrer"
+           onclick="alert('Link do Dia 2 será disponibilizado em breve.'); return false;">
+          <i class="fab fa-google-drive"></i> Abrir Galeria do Dia 2
+        </a>
+      </div>
     </div>
+
   </div>
+
+  <div class="info-box">
+    <i class="fas fa-info-circle"></i>
+    <p>
+      <strong>Nota:</strong> As fotografias estão armazenadas em formato original (HEIC) no Google Drive. Para visualizar no navegador ou descarregar em formato universal (JPG), poderá ser necessário converter o ficheiro após o download.
+    </p>
+  </div>
+
 </div>
 
 <footer class="footer">
@@ -212,96 +259,6 @@
   <hr>
   <p>© 2026 Ministério da Saúde (MISAU). Todos os direitos reservados.</p>
 </footer>
-
-<script>
-const fotos = {
-  1: [
-    { t: 'Chegada e Registo dos Participantes', d: 'Protocolo · 07h30 - 08h00' },
-    { t: 'Chegada de Sua Excia. Secretário de Estado', d: 'Comité de Recepção · 08h15 - 08h30' },
-    { t: 'Visita à Feira de Exposição de Oferta de Serviços', d: 'DS - RSP · 08h30 - 08h45' },
-    { t: 'Hino Nacional e Mensagem de Boas-Vindas', d: 'Todos · 08h50 - 09h05' },
-    { t: 'Intervenção do Parceiro de Primeiro Contacto', d: 'CCS · 09h05 - 09h15' },
-    { t: 'Apresentação dos Objectivos do Encontro', d: 'Dra. Paloma Maripiha · 09h15 - 09h25' },
-    { t: 'Discurso de Abertura por Sua Excia. Secretário de Estado', d: 'Arquiteto Vicente Joaquim Imede · 09h35 - 09h50' },
-    { t: 'Distinção do Melhor Hospital e Distrito', d: 'Sua Excia. Secretário de Estado · 09h50 - 10h10' },
-    { t: 'Painel I — Desafios e Prioridades de Saúde Pública', d: 'Moderadora: Dra. Edna Viegas · 12h25 - 13h30' },
-    { t: 'Painel II — Rede Assistencial da Cidade de Maputo', d: 'Moderadora: Directora do HCM · 13h30 - 14h30' },
-    { t: 'Execução Orçamental do Sector 2025-2026', d: 'Chefe do Dept. Administração e Finanças · 14h50 - 15h05' },
-    { t: 'Considerações Finais do 1º Dia', d: 'Dra. Paloma Maripiha · 15h50 - 16h06' }
-  ],
-  2: [
-    { t: 'Chegada e Registo dos Participantes', d: 'Todos · 07h30 - 08h00' },
-    { t: 'Leitura e Aprovação da Síntese do 1º Dia', d: 'Secretariado · 08h00 - 08h30' },
-    { t: 'Balanço das Actividades Inspectivas', d: 'Chefe Unid. Controlo Interno · 08h30 - 08h45' },
-    { t: 'Balanço de Processos Disciplinares', d: 'Chefe Rep. Assuntos Jurídicos · 08h45 - 09h00' },
-    { t: 'Desempenho do Sector (DEPC)', d: 'Apresentação DEPC · 09h00 - 09h20' },
-    { t: 'Painel II — Parcerias para Melhoria dos Resultados em Saúde', d: 'CCS · Medicus Mundi · Pathfinder · 09h20 - 10h25' },
-    { t: 'Mesa Redonda — Bem-Estar e Saúde Mental', d: 'Dra. Lucia Mahota · Dr. Dirceu Mabunda · Dra. Noely Couto · 11h05 - 12h10' },
-    { t: 'Painel IV — Transformação Digital e Inovação', d: 'DREAM · DIS · CS Polana Cimento · 12h20 - 13h25' },
-    { t: 'Sessão de Encerramento', d: 'Dra. Directora do SSCM · 13h25 - 15h00' },
-    { t: 'Momento Cultural', d: 'Banda · 13h25' },
-    { t: 'Leitura do Comunicado Final', d: 'Secretariado' },
-    { t: 'Discurso de Encerramento', d: 'Excelentíssima Senhora Directora do Serviço de Saúde' },
-    { t: 'Almoço de Confraternização', d: 'Todos' }
-  ]
-};
-
-let currentDay = 1;
-
-function render(day) {
-  currentDay = day;
-  const grid = document.getElementById('fotosGrid');
-  const arr = fotos[day];
-
-  document.getElementById('dayTitle').innerHTML = day === 1
-    ? '<span>Dia 1 · 12 de Setembro de 2026</span>'
-    : '<span>Dia 2 · 13 de Setembro de 2026</span>';
-
-  if (!arr || !arr.length) {
-    grid.innerHTML = '<p class="empty">Nenhuma fotografia disponível para este dia.</p>';
-    return;
-  }
-
-  grid.innerHTML = arr.map((f, i) => `
-    <div class="foto" onclick="openLightbox(${day}, ${i})">
-      <div class="img"><i class="fas fa-image"></i></div>
-      <div class="info">
-        <h4>${f.t}</h4>
-        <p>${f.d}</p>
-      </div>
-    </div>
-  `).join('');
-}
-
-function openLightbox(day, idx) {
-  const f = fotos[day][idx];
-  document.getElementById('lbTitle').textContent = f.t;
-  document.getElementById('lbDesc').textContent = f.d;
-  document.getElementById('lightbox').classList.add('active');
-}
-
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('active');
-}
-
-document.getElementById('lightbox').addEventListener('click', e => {
-  if (e.target.id === 'lightbox') closeLightbox();
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeLightbox();
-});
-
-document.querySelectorAll('.day-tabs button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.day-tabs button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    render(parseInt(btn.dataset.day));
-  });
-});
-
-render(1);
-</script>
 
 </body>
 </html>
